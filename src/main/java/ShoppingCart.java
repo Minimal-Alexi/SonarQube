@@ -4,9 +4,9 @@ import java.util.ResourceBundle;
 import java.util.Scanner;
 
 public class ShoppingCart {
-    public static float itemCalculator(int quantity, float calculator)
+    public static float itemCalculator(int quantity, float price)
     {
-        return quantity * calculator;
+        return quantity * price;
     }
 
     public static void main(String[] args) {
