@@ -11,7 +11,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/ADirin/SEP1_Week7_Spring2025_Inclass_solution.git'
+                git 'https://github.com/Minimal-Alexi/SEP2_Week7_Spring2025_Localization.git'
             }
         }
         stage('Build') {
