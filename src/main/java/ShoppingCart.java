@@ -4,6 +4,10 @@ import java.util.ResourceBundle;
 import java.util.Scanner;
 
 public class ShoppingCart {
+    public static float itemCalculator(int quantity, float calculator)
+    {
+        return quantity * calculator;
+    }
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -58,7 +62,14 @@ public class ShoppingCart {
             System.out.println("Language not found");
             messages = ResourceBundle.getBundle("messages", new Locale("en", "US"));
         }
-
+        int nrItems = scanner.nextInt();
+        float total = 0;
+        for (int i = 0; i < nrItems; i++)
+        {
+            int quantity = scanner.nextInt();
+            float price = scanner.nextFloat();
+            total += itemCalculator(quantity, price);
+        }
 
         scanner.close();
     }
