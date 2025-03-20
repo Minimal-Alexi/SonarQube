@@ -39,17 +39,6 @@ pipeline {
                 jacoco()
             }
         }
-        stage('Docker Login') {
-                    steps {
-                        script {
-                            withCredentials([usernamePassword(credentialsId: DOCKERHUB_CREDENTIALS_ID,
-                                                             usernameVariable: 'DOCKERHUB_USER',
-                                                             passwordVariable: 'DOCKERHUB_PASSWORD')]) {
-                                bat "docker login -u %DOCKERHUB_USER% --password %DOCKERHUB_PASSWORD%"
-                            }
-                        }
-                    }
-                }
          stage('Build Docker Image') {
                     steps {
                         // Build Docker image
