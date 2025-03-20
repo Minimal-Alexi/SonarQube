@@ -14,7 +14,7 @@ public class ShoppingCart {
 
         // Select language
         System.out.println("Select a language: ");
-        System.out.println("1. Farsi");
+        System.out.println("1. Swedish");
         System.out.println("2. Finnish");
         System.out.println("3. Japanese");
         System.out.println("4. English");
@@ -26,7 +26,7 @@ public class ShoppingCart {
         {
             case 1:
             {
-                locale = new Locale("fa", "IR");
+                locale = new Locale("sv", "SE");
                 break;
             }
             case 2:
@@ -55,22 +55,26 @@ public class ShoppingCart {
         ResourceBundle messages;
         try
         {
-            messages = ResourceBundle.getBundle("messages", locale);
+            messages = ResourceBundle.getBundle("MessagesBundle", locale);
 
         }catch (MissingResourceException e)
         {
             System.out.println("Language not found");
-            messages = ResourceBundle.getBundle("messages", new Locale("en", "US"));
+            messages = ResourceBundle.getBundle("MessagesBundle", new Locale("en", "US"));
         }
+        System.out.println(messages.getString("inputItemNr"));
         int nrItems = scanner.nextInt();
         float total = 0;
         for (int i = 0; i < nrItems; i++)
         {
+            System.out.println(messages.getString("inputPrice"));
             int quantity = scanner.nextInt();
+            System.out.println(messages.getString("inputQuantity"));
             float price = scanner.nextFloat();
             total += itemCalculator(quantity, price);
+            System.out.println();
         }
-
+        System.out.println(messages.getString("outputCost") + String.format("%.2f",total));
         scanner.close();
     }
 }
