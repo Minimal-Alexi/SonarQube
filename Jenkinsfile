@@ -2,7 +2,7 @@ pipeline {
     agent any
      environment {
             // Define Docker Hub credentials ID
-            DOCKERHUB_CREDENTIALS_ID = 'Docker_Hub'
+            DOCKERHUB_CREDENTIALS_ID = '766ad170-3f44-470a-bf6f-15ea59065be6'
             // Define Docker Hub repository name
             DOCKERHUB_REPO = 'popalexdocker/localization_hw'
             // Define Docker image tag
